@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hello, world!</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudBud</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.svg"/>
+    <link rel="stylesheet" href="scss/main.scss">
 </head>
 <body>
-  <h1>Hello, world!</h1>
+  <nav>
+    <a href="index.html"><img class="logo" src="images/logo.svg" alt="logo"></a>
+      <ul class="nav__links">
+          <li><a  href="stopwatch.html">Stopwatch</a></li>
+          <li><a href="musicplayer.html">Music Player</a></li>
+          <li><a href="tasklist.html">Task List</a></li>
+          <li><a href="convey.html">Convey Quadrants</a></li>
+          <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+          <li><a href="dictionary.html">Dictionary Lookup</a></li>
+      </ul>
+
+      <div class="burger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+  </nav>
+
+<!-- Navigation java script -->
+<script src="components/navigation.js"></script>
+
+<!-- Content -->
+<div id='home' class="page-container"></div>
+  <h1 class="heading">The only web application you need to help manage your studies</h1>
+  <p class="subheading">Become the best student with StudBud’s revolutionary study tools and methods. Learn how to effectively manage your tasks and time in order to complete your work, quicker.</p>
+</div>
 </body>
+
 </html>
