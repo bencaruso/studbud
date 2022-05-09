@@ -1,0 +1,53 @@
+.stopwatch {
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 23px;
+    width: 100%;
+    padding: 25px 0px;
+    background-color: #628DF8;
+    border-radius: 15px;
+    margin-top: 40px;
+  }
+
+.time {
+    font-family: "Avenir Black";
+    font-size: 10vw;
+    color: white
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+
+    width: 187px;
+}
+
+.buttonPlay {
+    cursor: pointer;
+    background-color: white;
+    color: #3B70F7;
+    padding: 0.2em 2em;
+    border-radius: 5px;
+    border: none;
+    margin-left: -25px;
+    outline: none;
+}
+
+.buttonReset {
+    cursor: pointer;
+    background-color: white;
+    color: #3B70F7;
+    padding: 0.2em 2em;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    outline: none;
+}
+
+#playButton {
+    display: block;
+}
+
+#pauseButton {
+    display: none;
+}
