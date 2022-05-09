@@ -81,6 +81,9 @@ function renderTask(task) {
 
     // Clear the input form
     form.reset();
+
+    // Save the tasks to local storage
+    save();
 }
 
 // Function to remove item from array
@@ -100,3 +103,10 @@ function updateEmpty() {
         document.getElementById('emptyList').style.display = 'block';
     }
 }
+
+// Function to save tasks to local storage
+function save() {
+    var JSONreadyTasks = JSON.stringify(taskListArray);
+    localStorage.setItem('tasks', JSONreadyTasks);
+    JSON.parse(taskListArray);
+  }
