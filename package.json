@@ -1,0 +1,29 @@
+{
+  "name": "studbud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bencaruso/studbud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bencaruso/studbud/issues"
+  },
+  "homepage": "https://github.com/bencaruso/studbud#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "sass": "^1.51.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
+}
