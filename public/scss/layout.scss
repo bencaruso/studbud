@@ -13,10 +13,48 @@ body {
     text-align: center;
     color: white;
     padding: 1em;
-    margin: 0 1em;
+    margin: 0 4em;
 }
 
 .heading {
     text-align: center;
     color: white;
+}
+
+// SCSS for footer
+
+.footer-container {
+    padding: 4em;
+}
+
+.inner-footer {
+    background-color: #1F1F1F;
+    padding: 4rem;
+    box-sizing: border-box;
+    color: #3B70F7;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+
+    h1 {
+        font-size: 28px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .logo-container {
+        padding-right: 4em;
+    }
 }
