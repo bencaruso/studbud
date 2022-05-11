@@ -7,6 +7,8 @@
     <title>StudBud</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.svg"/>
     <link rel="stylesheet" href="scss/main.scss">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -35,6 +37,82 @@
   <h1 class="heading">Music Player</h1>
   <p class="subheading">Listen to music whilst you study with StudBud’s embedded music player.</p>
 </div>
+
+<!-- Code referenced from https://www.youtube.com/watch?v=1-CvPn4AbT4&ab_channel=CodingNepal -->
+
+<div class="wrapper">
+  <div class="top-bar">
+    <i class="material-icons">expand_more</i>
+    <span>Now Playing</span>
+    <i class="material-icons">more_horiz</i>
+  </div>
+  <div class="img-area">
+    <img src="images/gorillaz-cover.jpg" alt="Gorillaz cover photo">
+  </div>
+  <div class="img-cover" style="height: 10px;">
+    <img src="images/gorillaz-dp.jpg" alt="Gorillaz profile photo">
+  </div>
+  <div class="song-details">
+    <p class="name ">Feel Good Inc.</p>
+    <p class="artist">Gorillaz</p>
+  </div>
+
+  <div class="progress-area">
+    <div class="progress-bar"></div>
+    <div class="timer">
+      <span class="current">0:20</span>
+      <span class="current">3:40</span>
+    </div>
+  </div>
+
+  <div class="music-controls">
+
+    <div class="prev-song">
+      <i id="prev" class="material-icons">skip_previous</i>
+    </div>
+    
+    <div class="play-pause">
+      <i class="material-icons play">play_arrow</i>
+    </div>
+
+    <div class="next-song">
+      <i id="next" class="material-icons">skip_next</i>
+    </div>
+  </div>
+</div>
+
+<div class="music-list">
+  <ul>
+    <li>
+      <div class="music-row1">
+        <span>Feel Good Inc. - Gorillaz</span>
+        <span class="audio-duration">3:41</span>
+      </div>
+    </li>
+
+    <li>
+      <div class="music-row2">
+        <span>Mice on Venus - C418</span>
+        <span class="audio-duration">4:42</span>
+      </div>
+    </li>
+
+    <li>
+      <div class="music-row3">
+        <span>Sparks - Coldplay</span>
+        <span class="audio-duration">3:47</span>
+      </div>
+    </li>
+
+    <li>
+      <div class="music-row4">
+        <span>Steeeam - Shelly</span>
+        <span class="audio-duration">2:50</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
 </body>
 
 </html>
