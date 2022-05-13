@@ -40,30 +40,34 @@
 
 <!-- Code referenced from https://www.youtube.com/watch?v=1-CvPn4AbT4&ab_channel=CodingNepal -->
 
-<div class="wrapper">
+<div class="music-container" id="music-container">
+
   <div class="top-bar">
     <i class="material-icons">expand_more</i>
     <span>Now Playing</span>
     <i class="material-icons">more_horiz</i>
   </div>
+
   <div class="img-area">
-    <img src="images/gorillaz-cover.jpg" alt="Gorillaz cover photo">
+    <img src="images/covers/gorillaz-cover.jpg" alt="Music cover" id="cover">
   </div>
-  <div class="img-cover" style="height: 10px;">
-    <img src="images/gorillaz-dp.jpg" alt="Gorillaz profile photo">
+  <div class="img-dp" style="height: 10px;">
+    <img src="images/dps/gorillaz-dp.jpg" alt="Song profile photo" id="dp">
   </div>
   <div class="song-details">
-    <p class="name ">Feel Good Inc.</p>
-    <p class="artist">Gorillaz</p>
+    <p class="name"></p>
+    <p class="artist"> </p>
   </div>
 
   <div class="progress-area">
     <div class="progress-bar"></div>
-    <div class="timer">
-      <span class="current">0:20</span>
-      <span class="current">3:40</span>
+    <div class="song-timer">
+      <span class="current-time"></span>
+      <span class="max-duration"></span>
     </div>
   </div>
+
+  <audio src="songs/feel-good-inc.mp3" id="audio" autostart="true"></audio>
 
   <div class="music-controls">
 
@@ -82,36 +86,40 @@
 </div>
 
 <div class="music-list">
+  <p class="header">Music List</p>
   <ul>
     <li>
-      <div class="music-row1">
-        <span>Feel Good Inc. - Gorillaz</span>
+      <div class="row">
+        <span class="song-name">Feel Good Inc. - Gorillaz</span>
         <span class="audio-duration">3:41</span>
       </div>
     </li>
 
     <li>
-      <div class="music-row2">
+      <div class="row">
         <span>Mice on Venus - C418</span>
         <span class="audio-duration">4:42</span>
       </div>
     </li>
 
     <li>
-      <div class="music-row3">
+      <div class="row">
         <span>Sparks - Coldplay</span>
         <span class="audio-duration">3:47</span>
       </div>
     </li>
 
     <li>
-      <div class="music-row4">
+      <div class="row">
         <span>Steeeam - Shelly</span>
         <span class="audio-duration">2:50</span>
       </div>
     </li>
   </ul>
 </div>
+
+<!-- Music player java script -->
+<script src="components/musicplayer/musicplayer.js" type="module"></script>
 
 </body>
 
