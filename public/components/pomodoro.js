@@ -1,7 +1,9 @@
+// https://freshman.tech/pomodoro-timer/
+
 const timer = {
-    pomodoro: 25,
-    shortBreak: 5,
-    longBreak: 15,
+    pomodoro: 1,
+    shortBreak: 1,
+    longBreak: 1,
     longBreakInterval: 4,
     sessions: 0,
   };
@@ -14,7 +16,7 @@ mainButton.addEventListener('click', () => {
   if (action === 'start') {
     startTimer();
   } else {
-    stopTimer();
+    pauseTimer();
   }
 });
 
@@ -42,9 +44,9 @@ function startTimer() {
 
     if (timer.mode === 'pomodoro') timer.sessions++;
 
-    mainButton.dataset.action = 'stop';
+    mainButton.dataset.action = 'pause';
 
-    mainButton.textContent = 'Stop';
+    mainButton.textContent = 'Pause';
 
     mainButton.classList.add('active');
 
@@ -69,12 +71,18 @@ function startTimer() {
                 switchMode('pomodoro');
             }
 
+            if (Notification.permission === 'granted') {
+              const text =
+                timer.mode === 'pomodoro' ? 'Time to get back to work.' : 'Time to take a break.';
+              new Notification(text);
+            }
+
             startTimer();
         }
     }, 1000);
 }
 
-function stopTimer() {
+function pauseTimer() {
   clearInterval(interval);
 
   mainButton.dataset.action = 'start';
@@ -119,9 +127,24 @@ function switchMode(mode) {
     if (!mode) return;
   
     switchMode(mode);
-    stopTimer();
+    pauseTimer();
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Let's check if the browser supports notifications
+    if ('Notification' in window) {
+      // If notification permissions have neither been granted or denied
+      if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+        // ask the user for permission
+        Notification.requestPermission().then(function(permission) {
+          // If permission is granted
+          if (permission === 'granted') {
+            // Create a new notification
+            new Notification('Awesome! You will be notified at the start of each session.');
+          }
+        });
+      }
+    }
+  
     switchMode('pomodoro');
   });
