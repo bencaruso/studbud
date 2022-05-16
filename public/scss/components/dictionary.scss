@@ -1,0 +1,76 @@
+.words {
+    padding: 1em 0;
+    
+    .search-bar {
+        width: 100%;
+        border: none;
+        padding: 8px;
+        border-radius: 100px;
+        outline: none;
+    }
+    .search-bar::placeholder {
+        color: #3B70F7;
+    }
+    .search-bar[type=text] {
+        color: #3B70F7;
+        padding-left: 10px;
+    }
+    .search-icon {
+        color: #3B70F7;
+        background: none;
+        border: none;
+        position: relative;
+        margin-right: 10px;
+        float: right;
+        bottom: 32px;
+        cursor: pointer;
+    }
+}
+
+.content {
+    padding-right: 40px;
+}
+
+.results {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.wrapper {
+    color: white;
+    background-color: #628DF8;
+    padding: 1em;
+    border-radius: 8px;
+
+    .not__found {
+        color: white;
+        margin-top: 60px;
+        font-size: 25px;
+        display: none;
+    }
+
+    .word p {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    li {
+        padding-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        text-align: left;
+
+        p{
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+    }
+    .synonyms {
+        display: block;
+    }
+}

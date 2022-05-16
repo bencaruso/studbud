@@ -7,6 +7,8 @@
     <title>Dictionary Lookup</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.svg"/>
     <link rel="stylesheet" href="scss/main.scss">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -31,10 +33,64 @@
 <script src="components/navigation.js"></script>
 
 <!-- Content -->
-<div id='home' class="page-container"></div>
+<div id='home' class="page-container">
   <h1 class="heading">Dictionary Lookup</h1>
   <p class="subheading">Lookup definitions and synonyms of words.</p>
+
+
+  <div class="words">
+    <input type="text" class='search-bar' id='input' placeholder="Search...">
+    <button id="search" class="search-icon">
+      <i class="material-icons">search</i>
+    </button>
+  </div>
+
+    <div class="results">
+      <h2>Results</h2>
+    </div>
+
+  <div class="wrapper">
+    <div class="not__found">
+      <span>No results found.</span>
+    </div>
+    <ul>
+      <li class="word">
+        <div class="details">
+          <p></p>
+          <span></span>
+        </div>
+        <i class="fas fa-volume-up"></i>
+      </li>
+      <div class="content">
+        <li class="meaning">
+          <div class="details">
+            <p>Definition:</p>
+            <span></span>
+          </div>
+        </li>
+        <li class="example">
+          <div class="details">
+            <p>Example:</p>
+            <span></span>
+          </div>
+        </li>
+        <hr>
+        <li class="synonyms">
+          <div class="details">
+            <p>Synonyms:</p>
+            <div class="list"></div>
+          </div>
+        </li>
+      </div>
+    </ul>
+
+  </div>
+    
 </div>
+
+<script src="components/dictionary.js"></script>
+
+
 </body>
 
 </html>
