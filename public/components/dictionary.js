@@ -1,3 +1,5 @@
+// nepal coder - find other webistes
+
 const synonyms = document.querySelector(".synonyms .list")
 let input = document.querySelector('#input')
 let search = document.querySelector('#search')

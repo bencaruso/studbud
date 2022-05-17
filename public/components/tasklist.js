@@ -108,5 +108,5 @@ function updateEmpty() {
 function save() {
     var JSONreadyTasks = JSON.stringify(taskListArray);
     localStorage.setItem('tasks', JSONreadyTasks);
-    JSON.parse(taskListArray);
+    (taskListArray);
   }
