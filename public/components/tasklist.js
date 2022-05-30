@@ -1,112 +1,111 @@
-// Basic form DOM elements
-const form = document.getElementById("taskform");
-const button = document.querySelector("#taskform > button")
+let subButton = document.getElementById('tasksubmit');
 
-// Selector for the tasklist output
-var tasklist = document.querySelector("#tasklist > ul");
+renderTasks();
 
-// DOM elements for the task input fields
-var taskInput = document.getElementById("taskInput");
-var dueDateInput = document.getElementById("dueDateInput");
-var completionTimeInput = document.getElementById("completionTimeInput");
-var estimatedTimeInput = document.getElementById("estimatedTimeInput");
-var priorityInput = document.getElementById("priorityInput");
+subButton.addEventListener('click', function() {
 
-// Form submission event listener
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    let task = taskInput.value;
-    let dueDate = dueDateInput.value;
-    let completionTime = completionTimeInput.value;
-    let estimatedTime = estimatedTimeInput.value;
+    let taskName = document.getElementById('taskInput').value;
+    let dueDate = document.getElementById('dueDateInput').value;
+    let completionTime = document.getElementById('completionTimeInput').value;
+    let estimatedTime = document.getElementById('estimatedTimeInput').value;
     let priorityRating = priorityInput.options[priorityInput.selectedIndex].value;
-    if (task) {
-        addTask(task, dueDate, estimatedTime, priorityRating, completionTime, false);
+
+    if(taskName == "") { document.getElementById("taskInput").classList.add("error");
+    return;
     }
-})
 
-// Create global array to track tasks
-var taskListArray = [];
-
-// Function to add task with user inputs as parameters
-function addTask(taskDescription, dueDate, estimatedTime, priorityRating, completionTime, completionStatus) {
-    let d = new Date();
-    let dateCreated = d.getFullYear();
-    let task = {
-        id: Date.now(),
-        taskDescription,
-        dueDate,
-        dateCreated,
-        estimatedTime,
-        completionTime,
-        priorityRating,
-        estimatedTime,
-        completionStatus
+    let taskObj = {
+        'taskName': taskName,
+        'dueDate': dueDate,
+        'completionTime': completionTime,
+        'estimatedTime': estimatedTime,
+        'priorityRating': priorityRating
     };
-    taskListArray.push(task);
-    console.log(taskListArray);
-    renderTask(task);
-}
+    
+    let existingTasks = getTasks();
 
-// Function to display task on screen
-function renderTask(task) {
+    existingTasks.push(taskObj);
 
-    // Call function - checks if a task has been added
-    updateEmpty();
+    existingTasks = JSON.stringify(existingTasks);
 
-    // Create HTML elements
-    let item = document.createElement("li");
-    item.setAttribute('data-id', task.id);
-    item.innerHTML = "<p>" + task.taskDescription + "</p>";
+    localStorage.setItem('tasks', existingTasks);
 
-    tasklist.appendChild(item);
+    renderTasks();
 
-    // Extra Task DOM elements
-    let delButton = document.createElement("button");
-    let delButtonText = document.createTextNode("Delete Task");
-    delButton.appendChild(delButtonText);
-    item.appendChild(delButton);
+});
 
+function getTasks() {
+    let tasks = localStorage.getItem('tasks');
 
-    // Event Listeners for DOM elements
-    delButton.addEventListener("click", function(event) {
-        event.preventDefault();
-        let id = event.target.parentElement.getAttribute('data-id');
-        let index = taskListArray.findIndex(task => task.id === Number(id));
-        removeItemFromArray(taskListArray, index)
-        console.log(taskListArray);
-        updateEmpty();
-        item.remove();
-    })
+    if (tasks == null) {
 
-    // Clear the input form
-    form.reset();
-
-    // Save the tasks to local storage
-    save();
-}
-
-// Function to remove item from array
-function removeItemFromArray(arr, index) {
-    if (index > -1) {
-        arr.splice(index, 1)
+        return [];
     }
-    return arr;
+
+    tasks = JSON.parse(tasks);
+
+    return tasks;
+}
+
+function renderTasks() {
+
+    emptyList();
+    
+    let tasks = getTasks();
+
+    let taskUl = document.querySelector('#tasklist ul')
+
+    taskUl.innerHTML = "";
+    
+    tasks.forEach(function(task) {
+        let taskLi = document.createElement('li');
+
+        let taskName = document.createElement('span');
+        taskName.setAttribute('class', 'taskName');
+        taskName.innerText = task.taskName;
+
+        let horizontalLine = document.createElement('hr');
+        horizontalLine.setAttribute('class', 'horizontalLine');
+
+        let taskRemove = document.createElement('button');
+        taskRemove.setAttribute('class', 'remove');
+        // taskRemove.innerText = 'x';
+
+        taskRemove.addEventListener('click', function() {
+            taskLi.remove();
+
+            removeTask(task.taskName);
+        });
+
+        taskLi.appendChild(taskName);
+        taskLi.appendChild(taskRemove);
+        taskLi.appendChild(horizontalLine);
+
+        taskUl.appendChild(taskLi);
+
+    });
+};
+
+function removeTask(taskName) {
+    let tasks = getTasks();
+
+    let taskIndex = tasks.findIndex(function(task) {
+        return task.taskName == taskName;
+    });
+
+    tasks.splice(taskIndex, 1);
+
+    tasks = JSON.stringify(tasks);
+    localStorage.setItem('tasks', tasks);
+    emptyList();
 }
 
 
-// Function to hide the 'you haven't added any tasks' text
-function updateEmpty() {
-    if (taskListArray.length > 0) {
+function emptyList() {
+    let tasks = getTasks();
+    if (tasks.length > 0) {
         document.getElementById('emptyList').style.display = 'none';
     } else {
         document.getElementById('emptyList').style.display = 'block';
     }
 }
-
-// Function to save tasks to local storage
-function save() {
-    var JSONreadyTasks = JSON.stringify(taskListArray);
-    localStorage.setItem('tasks', JSONreadyTasks);
-    (taskListArray);
-  }

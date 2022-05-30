@@ -22,6 +22,9 @@ nav {
     text-decoration: none;
     color: white; 
   } 
+  a:hover {
+    font-weight: bold;
+  }
 }
 
 .burger-menu {
@@ -52,7 +55,7 @@ nav {
     position: absolute;
     right: 0px;
     height: 92vh;
-    top: 8vh;
+    top: 10vh;
     background-color:#3B70F7;
     display: flex;
     flex-direction: column;
@@ -60,6 +63,9 @@ nav {
     width: 50%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    z-index: 100;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 
     li {
       opacity: 0;
