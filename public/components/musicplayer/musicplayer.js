@@ -69,6 +69,7 @@ let musicIndex = 1;
 window.addEventListener("load", ()=>{
     loadMusic(musicIndex);
     playMusic();
+    playingSong();
 });
 
 function loadMusic(indexNumb){
@@ -77,6 +78,7 @@ function loadMusic(indexNumb){
     document.getElementById("cover").src=covers[[indexNumb - 1]];
     document.getElementById("dp").src=dps[[indexNumb - 1]];
     document.getElementById("audio").src=songs[[indexNumb - 1]];
+    
 }
 
 function playMusic() {
@@ -102,6 +104,7 @@ function prevMusic() {
 
     loadMusic(musicIndex);
     playMusic();
+    playingSong();
 }
 
 function nextMusic() {
@@ -113,6 +116,7 @@ function nextMusic() {
 
     loadMusic(musicIndex);
     playMusic();
+    playingSong();
 }
 
 function updateProgress(event) {
@@ -157,14 +161,6 @@ function songCurrentTime(event) {
     console.log(event.srcElement.currentTime)
 }
 
-function clicked(element){
-    let getLiIndex = element.getAttribute("li-index");
-    musicIndex = getLiIndex; //updating current song index with clicked li index
-    loadMusic(musicIndex);
-    playMusic();
-    playingSong();
-}
-
 
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play')
@@ -173,8 +169,51 @@ playBtn.addEventListener('click', () => {
         pauseMusic()
     } else {
         playMusic()
+        playingSong()
     }
 })
+
+let ulTag = document.querySelector(".music-list ul");
+
+for (let i = 0; i < allMusic.length; i++) {
+    let liTag = `<li li-index="${i + 1}">
+                <div class="row">
+                  <span>${allMusic[i].name}</span>
+                  <p>${allMusic[i].artist}</p>
+                </div>
+              </li>`;
+
+    ulTag.insertAdjacentHTML("beforeend", liTag); //inserting the li inside ul tag
+}
+
+//play particular song from the list onclick of li tag
+function playingSong(){
+    const allLiTag = ulTag.querySelectorAll("li");
+    
+    for (let j = 0; j < allLiTag.length; j++) {
+      
+      if(allLiTag[j].classList.contains("playing")){
+        allLiTag[j].classList.remove("playing");
+      }
+  
+      //if the li tag index is equal to the musicIndex then add playing class in it
+      if(allLiTag[j].getAttribute("li-index") == musicIndex){
+        allLiTag[j].classList.add("playing");
+      }
+  
+      allLiTag[j].setAttribute("onclick", "clicked(this)");
+
+    }
+  }
+  
+  //particular li clicked function
+  function clicked(element){
+    let getLiIndex = element.getAttribute("li-index");
+    musicIndex = getLiIndex; //updating current song index with clicked li index
+    loadMusic(musicIndex);
+    playMusic();
+    playingSong();
+  }
 
 // Event listener for skip and previous buttons
 prevBtn.addEventListener('click', prevMusic)

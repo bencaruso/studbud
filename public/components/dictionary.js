@@ -34,17 +34,6 @@ function data(result, word) {
             }
         
         }
-
-        // if(definitions.synonyms[0] == undefined) {
-        //     synonyms.style.display = "none";
-        // } else {
-        //     synonyms.style.display = "block";
-        //     synonyms.innerHTML = "";
-        //     for (let i = 0; i < 5; i++) {
-        //         let tag = `<span>${result[0].meanings[0].synonyms[0]},</span>`;
-        //         synonyms.insertAdjacentHTML("beforeend", tag);
-        //     }
-        // }
     }
 }
 
@@ -60,3 +49,8 @@ function fetchApi(word) {
        }
     });
   });
+
+// var form = document.getElementsByClassName('search-icon');
+//     function clickBtn () {
+//         fetchApi(e.target.value);
+//     }

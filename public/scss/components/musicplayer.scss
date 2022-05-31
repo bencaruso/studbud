@@ -224,11 +224,15 @@
     li {
         list-style: none;
         color: #3B70F7;
-        cursor: pointer;
     }
 
     ul {
         padding: 0;
+
+        .playing {
+            font-weight: bold;
+            padding: 0;
+        }
     }
     
 }
