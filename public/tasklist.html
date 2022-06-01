@@ -10,6 +10,10 @@
 </head>
 
 <body>
+  
+  <!-- Navigation bar -->
+  <!-- Code used and referenced from https://www.youtube.com/watch?v=gXkqy0b4M5g&ab_channel=DevEd -->
+
   <nav>
     <a href="index.html"><img class="logo" src="images/logo.svg" alt="logo"></a>
       <ul class="nav__links">
@@ -32,6 +36,8 @@
 <script src="components/navigation.js"></script>
 
 <!-- Task list -->
+<!-- Code used and referenced from Rob Dongas' task list code walkthrough and Drew Cosgrove's item list code walkthrough -->
+
 <div id='tasks' class="page-container">
   <h1 class="heading">Task List</h1>
   <p class="subheading">Create a list of all your tasks in order to remind you of what tasks you need to complete.</p>
@@ -48,7 +54,7 @@
               <input type="date" name="dueDate" id="dueDateInput">
 
               <!-- Time input -->
-              <label for="completionTime">Completion Time:</label>
+              <label for="completionTime">Due Time:</label>
               <input type="time" name="completionTime" id="completionTimeInput">
 
               <label for="estimatedTime">Estimated completion time (in mins):</label>
@@ -68,19 +74,26 @@
           </form>
           
           <div id="tasklist">
-            <div class="currentTasksHeader">
-              <h2> Current tasks</h2>
-              <h2> Status</h2>
-            </div>
+
+              <table class="task-information">
+
+                <tr>
+                  <th>Task name</th>
+                  <th>Due date</th>
+                  <th>Due time</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+
+                  <!-- Using javascript to load tasks into table -->
+                </tr>
+              </table>
               <p id="emptyList">You have not added any tasks yet.</p>
-              <ul></ul>
           </div>
       </div>
-
 </div>
 
 
-
+<!-- Tasklist javascript -->
 <script src="components/tasklist.js">
 </script>
 
@@ -111,10 +124,6 @@
       <a href="#">Privacy</a>
       <a href="#">Licenses</a>
     </div>
-
-    <!-- <div class="footer-line">
-      <hr color="#3B70F7" />
-    </div> -->
 
   </div>
 

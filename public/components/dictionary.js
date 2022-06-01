@@ -1,4 +1,4 @@
-// nepal coder - find other webistes
+// code used and referenced from https://www.youtube.com/watch?v=uqgCF3JIHkA&t=1676s&ab_channel=CodingNepal
 
 const synonyms = document.querySelector(".synonyms .list")
 let input = document.querySelector('#input')
@@ -9,7 +9,7 @@ let details = document.querySelector('.details')
 
 function data(result, word) {
     if(result.title) {
-        notFound.style.display = "block"
+        notFound.style.display = "block" // if word isn't found, display text.
         content.style.display = "none"
         details.style.display = "none"
 
@@ -38,10 +38,11 @@ function data(result, word) {
 }
 
 function fetchApi(word) {
-    let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-    fetch(url).then(res => res.json()).then(result => data(result, word));
+    let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}` // utilised API.
+    fetch(url).then(res => res.json()).then(result => data(result, word)); // fetching data from API 
 }
 
+// search API when user clicks enter
 ["click", "keyup"].forEach(ev => {
     input.addEventListener(ev, function(e){
         if(e.key == "Enter" && e.target.value) {
@@ -49,8 +50,3 @@ function fetchApi(word) {
        }
     });
   });
-
-// var form = document.getElementsByClassName('search-icon');
-//     function clickBtn () {
-//         fetchApi(e.target.value);
-//     }

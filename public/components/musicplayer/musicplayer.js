@@ -1,3 +1,6 @@
+// Code used and referenced from https://www.youtube.com/watch?v=gXkqy0b4M5g&ab_channel=DevEd
+
+// returning HTML elements
 const musicContainer = document.querySelector('.music-container')
 
 const musicCover = document.querySelector(".img-area img")
@@ -20,8 +23,8 @@ const musicDuration = document.querySelector(".max-duration")
 
 const musicList = document.querySelector(".song-name")
 
-// Defining individual cover, display picture and audio files as parcel can't dynamically change the sources. I also needed to relocate the image and audio files where my javascript file was located, hence it strangely being in the components file.
-// This was a real problem for me to work around because of the way parcel handles image sources. I discussed with my tutor, we found declaring individual images a work around for my purposes of StudBud. If this was a real project I would utilise URLs or an API to gather my images.
+// Here I am defining the individual covers, display pictures and audio files as parcel can't dynamically change the sources of files once it's begun packaging everything. I also needed to relocate the images and audio files where my javascript file is located, hence it being in the components file.
+// This was a real problem for me to work around because of the way parcel handles image sources. After discussing with one of my tutors, we found declaring individual images a work around for my purposes of StudBud. If this was a real project, I understand utilising URLs or an API to gather my images a better work around.
 
 const covers = [
     new URL('covers/gorillaz-cover.jpg', import.meta.url),
@@ -64,6 +67,7 @@ let allMusic = [
     },
   ];
 
+  // The number in which song plays first. Would usually be 0, but I've setup the index to start at 1 for simplicity's sake.
 let musicIndex = 1;
 
 window.addEventListener("load", ()=>{
@@ -73,6 +77,7 @@ window.addEventListener("load", ()=>{
 });
 
 function loadMusic(indexNumb){
+    // -1 from the index because it starts at 1 rather than 0.
     musicName.innerText = allMusic[indexNumb - 1].name;
     musicArtist.innerText = allMusic[indexNumb - 1].artist;
     document.getElementById("cover").src=covers[[indexNumb - 1]];
@@ -81,6 +86,7 @@ function loadMusic(indexNumb){
     
 }
 
+// Functions for playing, pausing and skipping music. Essentially adds or removes a class in order to control the outcome of the music. See below for the event listener.
 function playMusic() {
     musicContainer.classList.add('play');
     playBtn.querySelector("i").innerText = "pause";
@@ -95,6 +101,7 @@ function pauseMusic() {
     audio.pause();
 }
 
+// Using an index in order to allow the user to skip through songs in a logical manner (if you were to skip the final song, it would return to the first song)
 function prevMusic() {
     musicIndex--;
 
@@ -119,6 +126,7 @@ function nextMusic() {
     playingSong();
 }
 
+// updating the song's progress based on the user
 function updateProgress(event) {
     const {duration, currentTime} = event.srcElement;
     const progressPercent = (currentTime / duration) * 100;
@@ -140,6 +148,7 @@ function setProgress(event) {
     audio.currentTime = (clickX / width) * duration;
 }
 
+// updating the duration's HTML element.
 function songDuration(event) {
     let duration = audio.duration;
     let totalMin = Math.floor(duration / 60);
@@ -150,6 +159,7 @@ function songDuration(event) {
     musicDuration.innerText = `${totalMin}:${totalSec}`;
 }
 
+// find the progress of the song by utilising an event element.
 function songCurrentTime(event) {
     const currentTime = event.srcElement.currentTime;
     let currentMin = Math.floor(currentTime / 60);
@@ -161,7 +171,7 @@ function songCurrentTime(event) {
     console.log(event.srcElement.currentTime)
 }
 
-
+// Event listener for playing and pausing the music. See above for the functions that add and remove the 'playing' class
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play')
 
@@ -173,6 +183,8 @@ playBtn.addEventListener('click', () => {
     }
 })
 
+
+// Dynamically loading in the music list into the HTML.
 let ulTag = document.querySelector(".music-list ul");
 
 for (let i = 0; i < allMusic.length; i++) {
@@ -186,12 +198,13 @@ for (let i = 0; i < allMusic.length; i++) {
     ulTag.insertAdjacentHTML("beforeend", liTag); //inserting the li inside ul tag
 }
 
-//play particular song from the list onclick of li tag
+// check what song is playing by using a for loop through the music list. Alternatively could've used a forEach function.
 function playingSong(){
     const allLiTag = ulTag.querySelectorAll("li");
     
     for (let j = 0; j < allLiTag.length; j++) {
       
+    // give playing song a 'playing' class, which is later used to style the playing song within the list.
       if(allLiTag[j].classList.contains("playing")){
         allLiTag[j].classList.remove("playing");
       }
@@ -200,19 +213,7 @@ function playingSong(){
       if(allLiTag[j].getAttribute("li-index") == musicIndex){
         allLiTag[j].classList.add("playing");
       }
-  
-      allLiTag[j].setAttribute("onclick", "clicked(this)");
-
     }
-  }
-  
-  //particular li clicked function
-  function clicked(element){
-    let getLiIndex = element.getAttribute("li-index");
-    musicIndex = getLiIndex; //updating current song index with clicked li index
-    loadMusic(musicIndex);
-    playMusic();
-    playingSong();
   }
 
 // Event listener for skip and previous buttons

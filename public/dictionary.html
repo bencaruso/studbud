@@ -11,6 +11,10 @@
       rel="stylesheet">
 </head>
 <body>
+
+<!-- Navigation bar -->
+<!-- Code used and referenced from https://www.youtube.com/watch?v=gXkqy0b4M5g&ab_channel=DevEd -->
+
   <nav>
     <a href="index.html"><img class="logo" src="images/logo.svg" alt="logo"></a>
       <ul class="nav__links">
@@ -33,6 +37,8 @@
 <script src="components/navigation.js"></script>
 
 <!-- Content -->
+<!-- Code used and referenced from: https://www.youtube.com/watch?v=uqgCF3JIHkA&t=1676s&ab_channel=CodingNepal -->
+
 <div id='home' class="page-container">
   <h1 class="heading">Dictionary Lookup</h1>
   <p class="subheading">Lookup definitions and synonyms of words.</p>
@@ -40,11 +46,13 @@
 
   <div class="words">
     <input type="text" class='search-bar' id='input' placeholder="Search...">
+
+    <!-- Search API when user clicks search icon. -->
     <button id="search" class="search-icon" onclick = "fetchApi(input.value);">
       <i class="material-icons">search</i>
     </button>
   </div>
-
+    <!-- Use JS to display information from API -->
     <div class="results">
       <h2>Results</h2>
     </div>
@@ -53,14 +61,17 @@
     <div class="not__found">
       <span>No results found.</span>
     </div>
+
     <ul>
+      <!-- Inputted word -->
       <li class="word">
         <div class="details">
           <p></p>
           <span></span>
         </div>
-        <i class="fas fa-volume-up"></i>
       </li>
+
+      <!-- Definition -->
       <div class="content">
         <li class="meaning">
           <div class="details">
@@ -68,6 +79,8 @@
             <span></span>
           </div>
         </li>
+
+        <!-- Example -->
         <li class="example">
           <div class="details">
             <p>Example:</p>
@@ -75,6 +88,7 @@
           </div>
         </li>
         <hr>
+        <!-- Synonyms -->
         <li class="synonyms">
           <div class="details">
             <p>Synonyms:</p>
@@ -82,12 +96,14 @@
           </div>
         </li>
       </div>
+
     </ul>
 
   </div>
     
 </div>
 
+<!-- Javascript for dictionary -->
 <script src="components/dictionary.js"></script>
 
 <!-- Footer content -->
@@ -117,13 +133,7 @@
       <a href="#">Privacy</a>
       <a href="#">Licenses</a>
     </div>
-
-    <!-- <div class="footer-line">
-      <hr color="#3B70F7" />
-    </div> -->
-
   </div>
-
 </footer>
 
 </body>

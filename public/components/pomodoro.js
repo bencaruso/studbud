@@ -1,5 +1,6 @@
-// https://freshman.tech/pomodoro-timer/
+// code used and referenced from https://freshman.tech/pomodoro-timer/
 
+// timer values
 const timer = {
     pomodoro: 25,
     shortBreak: 5,
@@ -10,6 +11,7 @@ const timer = {
 
 let interval;
 
+// event listener for start/pause button
 const mainButton = document.getElementById('js-btn');
 mainButton.addEventListener('click', () => {
   const { action } = mainButton.dataset;
@@ -23,6 +25,7 @@ mainButton.addEventListener('click', () => {
 const modeButtons = document.querySelector('.mode-buttons');
 modeButtons.addEventListener('click', handleMode);
 
+// create countdown by subtracting elapsed time from timer values
 function getRemainingTime(endTime) {
     const currentTime = Date.parse(new Date());
     const difference = endTime - currentTime;
@@ -38,6 +41,7 @@ function getRemainingTime(endTime) {
     };
   }
 
+  // starting timer
 function startTimer() {
     let { total } = timer.remainingTime;
     const endTime = Date.parse(new Date()) + total * 1000;
@@ -71,6 +75,7 @@ function startTimer() {
                 switchMode('pomodoro');
             }
 
+            // browser notifications
             if (Notification.permission === 'granted') {
               const text =
                 timer.mode === 'pomodoro' ? 'Time to get back to work.' : 'Time to take a break.';
@@ -82,6 +87,7 @@ function startTimer() {
     }, 1000);
 }
 
+// pausing timer
 function pauseTimer() {
   clearInterval(interval);
 
@@ -100,11 +106,13 @@ function updateClock() {
     min.textContent = minutes;
     sec.textContent = seconds;
 
+    // change document title to timer
     const text = timer.mode === 'pomodoro' ? 'Pomodoro' : 'Break';
     document.title = `${text} - ${minutes}:${seconds}`;
 
   }
 
+  // changing from pomodoro to break mode
 function switchMode(mode) {
     timer.mode = mode;
     timer.remainingTime = {

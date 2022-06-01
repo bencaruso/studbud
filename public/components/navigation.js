@@ -1,3 +1,5 @@
+// code used and referenced from https://www.youtube.com/watch?v=gXkqy0b4M5g&ab_channel=DevEd
+
 const navSlide = () => {
     const burgerMenu = document.querySelector('.burger-menu');
     const nav = document.querySelector('.nav__links');

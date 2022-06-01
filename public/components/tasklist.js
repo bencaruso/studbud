@@ -1,7 +1,10 @@
+// Code used and referenced from Rob Dongas' task list code walkthrough and Drew Cosgrove's item list code walkthrough
 let subButton = document.getElementById('tasksubmit');
 
+// rendering tasks to table
 renderTasks();
 
+// collecting input values
 subButton.addEventListener('click', function() {
 
     let taskName = document.getElementById('taskInput').value;
@@ -14,6 +17,7 @@ subButton.addEventListener('click', function() {
     return;
     }
 
+    // creating task object
     let taskObj = {
         'taskName': taskName,
         'dueDate': dueDate,
@@ -22,54 +26,74 @@ subButton.addEventListener('click', function() {
         'priorityRating': priorityRating
     };
     
+    
     let existingTasks = getTasks();
 
+    // Add the new item onto the end of the list.
     existingTasks.push(taskObj);
 
+    // turning input into string for local storage
     existingTasks = JSON.stringify(existingTasks);
 
+    // setting tasks to local storage
     localStorage.setItem('tasks', existingTasks);
 
     renderTasks();
 
 });
 
+// get items from local storage
 function getTasks() {
     let tasks = localStorage.getItem('tasks');
 
     if (tasks == null) {
 
+// if there are no items in the local storage, return an empty array
         return [];
     }
 
+    // convert tasks back into an array
     tasks = JSON.parse(tasks);
 
     return tasks;
 }
 
+// render task function to display tasks
 function renderTasks() {
 
     emptyList();
     
     let tasks = getTasks();
 
-    let taskUl = document.querySelector('#tasklist ul')
+    // loading tasks into the table
+    let taskUl = document.querySelector('#tasklist .task-information')
 
-    taskUl.innerHTML = "";
-    
     tasks.forEach(function(task) {
-        let taskLi = document.createElement('li');
 
-        let taskName = document.createElement('span');
+
+        let taskLi = document.createElement('tr');
+
+        let taskName = document.createElement('td');
         taskName.setAttribute('class', 'taskName');
         taskName.innerText = task.taskName;
+
+        let dueDate = document.createElement('td');
+        dueDate.setAttribute('class', 'dueDate');
+        dueDate.innerText = task.dueDate;
+
+        let completionTime = document.createElement('td');
+        completionTime.setAttribute('class', 'completionTime');
+        completionTime.innerText = task.completionTime;
+
+        let priorityRating = document.createElement('td');
+        priorityRating.setAttribute('class', 'priorityRating');
+        priorityRating.innerText = task.priorityRating;
 
         let horizontalLine = document.createElement('hr');
         horizontalLine.setAttribute('class', 'horizontalLine');
 
         let taskRemove = document.createElement('button');
         taskRemove.setAttribute('class', 'remove');
-        // taskRemove.innerText = 'x';
 
         taskRemove.addEventListener('click', function() {
             taskLi.remove();
@@ -77,15 +101,19 @@ function renderTasks() {
             removeTask(task.taskName);
         });
 
-        taskLi.appendChild(taskName);
-        taskLi.appendChild(taskRemove);
-        taskLi.appendChild(horizontalLine);
 
         taskUl.appendChild(taskLi);
+
+        taskLi.appendChild(taskName);
+        taskLi.appendChild(dueDate);
+        taskLi.appendChild(completionTime);
+        taskLi.appendChild(priorityRating);
+        taskLi.appendChild(taskRemove);
 
     });
 };
 
+// function to remove/complete a task
 function removeTask(taskName) {
     let tasks = getTasks();
 
@@ -100,7 +128,7 @@ function removeTask(taskName) {
     emptyList();
 }
 
-
+// check if the list is empty. If it is, display appropriate text.
 function emptyList() {
     let tasks = getTasks();
     if (tasks.length > 0) {

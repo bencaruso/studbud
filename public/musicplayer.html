@@ -11,6 +11,9 @@
       rel="stylesheet">
 </head>
 <body>
+  <!-- Navigation bar -->
+  <!-- Code used and referenced from https://www.youtube.com/watch?v=gXkqy0b4M5g&ab_channel=DevEd -->
+  
   <nav>
     <a href="index.html"><img class="logo" src="images/logo.svg" alt="logo"></a>
       <ul class="nav__links">
@@ -33,12 +36,11 @@
 <script src="components/navigation.js"></script>
 
 <!-- Content -->
+<!-- Code used and referenced from https://www.youtube.com/watch?v=1-CvPn4AbT4&ab_channel=CodingNepal -->
 <div id='home' class="page-container"></div>
   <h1 class="heading">Music Player</h1>
   <p class="subheading">Listen to music whilst you study with StudBud’s embedded music player.</p>
 </div>
-
-<!-- Code referenced from https://www.youtube.com/watch?v=1-CvPn4AbT4&ab_channel=CodingNepal -->
 
 <div class="music-container" id="music-container">
 
@@ -54,6 +56,7 @@
   <div class="img-dp" style="height: 10px;">
     <img src="./components/musicplayer/dps/gorillaz-dp.png" alt="Song profile photo" id="dp">
   </div>
+  <!-- Dynamically load song details including name, artist, length. -->
   <div class="song-details">
     <p class="name"></p>
     <p class="artist"> </p>
@@ -88,7 +91,7 @@
 <div class="music-list">
   <p class="header">Music List</p>
   <ul>
-    
+    <!-- Use JS to load music list -->
   </ul>
 </div>
 
@@ -123,10 +126,6 @@
       <a href="#">Licenses</a>
     </div>
 
-    <!-- <div class="footer-line">
-      <hr color="#3B70F7" />
-    </div> -->
-
   </div>
 
 </footer>
@@ -134,31 +133,3 @@
 </body>
 
 </html>
-
-<!-- <li>
-  <div class="row">
-    <span class="song-name">Feel Good Inc. - Gorillaz</span>
-    <span class="audio-duration">3:41</span>
-  </div>
-</li>
-
-<li>
-  <div class="row">
-    <span>Mice on Venus - C418</span>
-    <span class="audio-duration">4:42</span>
-  </div>
-</li>
-
-<li>
-  <div class="row">
-    <span>Sparks - Coldplay</span>
-    <span class="audio-duration">3:47</span>
-  </div>
-</li>
-
-<li>
-  <div class="row">
-    <span>Steeeam - Shelly</span>
-    <span class="audio-duration">2:50</span>
-  </div>
-</li> -->
