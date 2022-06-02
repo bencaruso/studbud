@@ -6,11 +6,13 @@ In this README file, I go over the design iteration process for StudBud which de
 ## Landing Page Development Documentation
 ![Landingpage development documentation](https://user-images.githubusercontent.com/102772660/171581600-ef77b437-4776-4d8d-96d6-f810009dacdf.png)
 
+
 ## Stopwatch Development Documentation
 ![Stopwatch development documentation](https://user-images.githubusercontent.com/102772660/171581654-233b7588-bdfe-4352-9d69-dafb97cac4f9.png)
 
 ## Musicplayer Development Documentation
 ![Musicplayer development documentation](https://user-images.githubusercontent.com/102772660/171581694-95ba145d-7edb-4dd1-9fbd-70e5d58c0a4d.png)
+
 
 ## Task List Development Documentation
 ![Tasklist development documentation](https://user-images.githubusercontent.com/102772660/171581916-ff86d537-d72f-42f4-bf52-8a0231695aab.png)
@@ -18,8 +20,10 @@ In this README file, I go over the design iteration process for StudBud which de
 ## Covey Quadrants Development Documentation
 ![Covey development documentation](https://user-images.githubusercontent.com/102772660/171582166-4e2a0f55-952c-4c60-9ed2-40d436ab6627.png)
 
+
 ## Pomodoro Timer Development Documentation
 ![Pomodoro development documentation](https://user-images.githubusercontent.com/102772660/171580919-9b675815-6b78-4627-943a-61350235d1df.png)
+
 
 ## Dictionary Lookup Development Documentation
 ![Dictionary development documentation](https://user-images.githubusercontent.com/102772660/171581620-af46db16-0329-4de1-991f-aea1c9b52e0b.png)
