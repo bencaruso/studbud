@@ -41,20 +41,32 @@ Upon completing StudBud, I have greatly deepened my understanding of HTML, CSS, 
 
 ### References
 
-Websites, YouTube tutorials and tutor tutorials were greatly utilised in order to complete this project. I also looked at a lot of Stack Overflow forum posts and W3Schools, so instead of referencing individual posts and pages I have just referenced Stack Overflow and W3Schools.
+Websites, YouTube tutorials and tutor tutorials were greatly utilised in order to complete this project. I also looked at a lot of Stack Overflow forum posts and W3Schools, so instead of referencing individual posts and pages I have just referenced Stack Overflow and W3Schools. Images for the musicplayer are also referenced.
+
+(2) C418—Minecraft—Minecraft Volume Alpha—YouTube. (n.d.). Retrieved June 2, 2022, from https://www.youtube.com/watch?v=qq-RGFyaq0U&ab_channel=InfernalEntertain
 
 CodingNepal. (2021a, April 29). Create Custom Music Player in HTML CSS & JavaScript. https://www.youtube.com/watch?v=1-CvPn4AbT4
 
 CodingNepal. (2021b, October 7). Build A Dictionary App in HTML CSS & JavaScript. https://www.youtube.com/watch?v=uqgCF3JIHkA
 
+Daniel (@C418) / Twitter. (n.d.). Twitter. Retrieved June 2, 2022, from https://twitter.com/C418
+
 DesignCourse. (2022, January 12). Learn HTML & CSS in 2022 | Crash Course. https://www.youtube.com/watch?v=gXLjWRteuWI
 
 Dev Ed. (2018, August 30). Responsive Navigation Bar Tutorial | HTML CSS JAVASCRIPT. https://www.youtube.com/watch?v=gXkqy0b4M5g
 
-How to Build a Stopwatch with HTML, CSS and JavaScript 2. (n.d.). Tinloof. Retrieved June 2, 2022, from https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2
+Gorillaz—Feel Good Inc. : (n.d.). Indie Shuffle. Retrieved June 2, 2022, from https://www.indieshuffle.com/gorillaz-feel-good-inc/
 
+How to Build a Stopwatch with HTML, CSS and JavaScript 2. (n.d.). Tinloof. Retrieved June 2, 2022, from https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2
 Isaiah, A. (100 C.E., 00:00 +  +0100). How to build a Pomodoro Timer App with JavaScript. Freshman — Articles and Tutorials on Software Development. https://freshman.tech/pomodoro-timer/
+
+Kreps, D. (2021, October 14). Coldplay Set “Sustainable and Low-Carbon” Stadium Tour in Support of “Music of the Spheres.” Rolling Stone. https://www.rollingstone.com/music/music-news/coldplay-sustainable-low-carbon-tour-music-of-the-spheres-1241932/
+
+Shelly – Steeeam. (n.d.). Retrieved June 2, 2022, from https://genius.com/Shelly-steeeam-lyrics
+
+Sparks. (n.d.). Coldpedia, the Coldplay Wiki. Retrieved June 2, 2022, from https://coldplay.fandom.com/wiki/Sparks
 
 Stack Overflow—Where Developers Learn, Share, & Build Careers. (n.d.). Stack Overflow. Retrieved June 2, 2022, from https://stackoverflow.com/
 
 W3Schools Free Online Web Tutorials. (n.d.). Retrieved June 2, 2022, from https://www.w3schools.com/
+
