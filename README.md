@@ -4,26 +4,25 @@ Made by Ben Caruso (bcar9303)
 In this README file, I go over the design iteration process for StudBud which depicts the transition from the mockup (made in XD) to the final prototype. I also use this file tor reflect on the entire project and what skills and resources I have taken away from it.
 
 ## Landing Page Development Documentation
-![Landing page development documentation](https://user-images.githubusercontent.com/102772660/171577372-82235e76-dd80-4a25-949a-35c4d9f123c6.svg)
+![Landingpage development documentation](https://user-images.githubusercontent.com/102772660/171581600-ef77b437-4776-4d8d-96d6-f810009dacdf.png)
 
 ## Stopwatch Development Documentation
-![Stopwatch development documentation](https://user-images.githubusercontent.com/102772660/171577536-caf66a32-f5ef-47fe-b8e1-55f29271bd3a.svg)
+![Stopwatch development documentation](https://user-images.githubusercontent.com/102772660/171581654-233b7588-bdfe-4352-9d69-dafb97cac4f9.png)
 
 ## Musicplayer Development Documentation
-![Musicplayer development documentation](https://user-images.githubusercontent.com/102772660/171577778-4cc12ee5-de8d-4a02-80a7-e56a3e02b344.svg)
+![Musicplayer development documentation](https://user-images.githubusercontent.com/102772660/171581694-95ba145d-7edb-4dd1-9fbd-70e5d58c0a4d.png)
 
 ## Task List Development Documentation
-![Stopwatch development documentation](https://user-images.githubusercontent.com/102772660/171577969-9b1734de-c0eb-4d68-861f-abde6aac3a97.svg)
+![Tasklist development documentation](https://user-images.githubusercontent.com/102772660/171581916-ff86d537-d72f-42f4-bf52-8a0231695aab.png)
 
 ## Covey Quadrants Development Documentation
-![Covey development documentation](https://user-images.githubusercontent.com/102772660/171578019-4bc488bc-78bc-4912-a7ea-b369a8cfa9a0.svg)
+![Covey development documentation](https://user-images.githubusercontent.com/102772660/171582166-4e2a0f55-952c-4c60-9ed2-40d436ab6627.png)
 
 ## Pomodoro Timer Development Documentation
-![Pomodoro development documentation](https://user-images.githubusercontent.com/102772660/171578055-ce2b0750-28ae-44fc-b6f7-5e107a83e93a.svg)
 ![Pomodoro development documentation](https://user-images.githubusercontent.com/102772660/171580919-9b675815-6b78-4627-943a-61350235d1df.png)
 
 ## Dictionary Lookup Development Documentation
-![Dictionary development documentation](https://user-images.githubusercontent.com/102772660/171578067-aa1073d7-ab27-491a-8004-909acd6fbe3c.svg)
+![Dictionary development documentation](https://user-images.githubusercontent.com/102772660/171581620-af46db16-0329-4de1-991f-aea1c9b52e0b.png)
 
 
 ## Project Development Documentation
@@ -38,7 +37,7 @@ Upon completing StudBud, I have greatly deepened my understanding of HTML, CSS, 
 
 ### References
 
-Websites, YouTube tutorials and tutor tutorials were greatly utilised in order to complete this project. I also looked at a lot of Stack Overflow forum posts, so instead of referencing each post I have just referenced Stack Overflow.
+Websites, YouTube tutorials and tutor tutorials were greatly utilised in order to complete this project. I also looked at a lot of Stack Overflow forum posts and W3Schools, so instead of referencing individual posts and pages I have just referenced Stack Overflow and W3Schools.
 
 CodingNepal. (2021a, April 29). Create Custom Music Player in HTML CSS & JavaScript. https://www.youtube.com/watch?v=1-CvPn4AbT4
 
