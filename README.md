@@ -1,7 +1,7 @@
 # StudBud - Web Prototype
 Made by Ben Caruso (bcar9303)
 
-In this README file, I go over the process design iteration process which depicts the transition from the mockup (made in XD) to the final prototype. I also use this file tor reflect on the entire project and what skills and resources I have taken away from it.
+In this README file, I go over the design iteration process for StudBud which depicts the transition from the mockup (made in XD) to the final prototype. I also use this file tor reflect on the entire project and what skills and resources I have taken away from it.
 
 ## Landing Page Development Documentation
 ![Landing page development documentation](https://user-images.githubusercontent.com/102772660/171577372-82235e76-dd80-4a25-949a-35c4d9f123c6.svg)
@@ -20,6 +20,7 @@ In this README file, I go over the process design iteration process which depict
 
 ## Pomodoro Timer Development Documentation
 ![Pomodoro development documentation](https://user-images.githubusercontent.com/102772660/171578055-ce2b0750-28ae-44fc-b6f7-5e107a83e93a.svg)
+![Pomodoro development documentation](https://user-images.githubusercontent.com/102772660/171580919-9b675815-6b78-4627-943a-61350235d1df.png)
 
 ## Dictionary Lookup Development Documentation
 ![Dictionary development documentation](https://user-images.githubusercontent.com/102772660/171578067-aa1073d7-ab27-491a-8004-909acd6fbe3c.svg)
