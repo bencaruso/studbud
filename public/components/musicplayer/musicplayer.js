@@ -1,4 +1,4 @@
-// Code used and referenced from https://www.youtube.com/watch?v=gXkqy0b4M5g&ab_channel=DevEd
+// Code used and referenced from https://www.youtube.com/watch?v=1-CvPn4AbT4&t=4293s&ab_channel=CodingNepal
 
 // returning HTML elements
 const musicContainer = document.querySelector('.music-container')
